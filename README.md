@@ -1,4 +1,4 @@
-# DSD_Project98
+# DSD_Project97
 **D**igital **S**ystem **D**esign 97_2 Project, Sharif University of Technology
 ## Team Members:
 
