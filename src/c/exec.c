@@ -8,27 +8,29 @@ void printBits(size_t const size, void const * const ptr)
     unsigned char byte;
     int i, j;
 
-    for (i=size-1;i>=0;i--)
+    for (i = 0; i < size; i++)
     {
-        for (j=7;j>=0;j--)
+        for (j = 7; j >= 0; j--)
         {
             byte = (b[i] >> j) & 1;
             printf("%u", byte);
         }
+        // printf(" ");
     }
     puts("");
 }
 
 int main(int argc, char const *argv[])
 {
-    uint16_t inp = 1;
-    void* input = &inp;
-    void* hash = malloc(500);
+    char* inp = "harry potter";
+    void* input = (void *)inp;
+    void* hash = malloc(8);
+    memset(hash, 0, 8);
     
     echohash(hash, input);
-    printBits(strlen(hash) , hash);
+    printBits(8 , hash);
     printf("\n");
-    printBits(strlen(input) , input);
+    printBits(strlen(inp) , input);
 }
 
 

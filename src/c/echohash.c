@@ -14,11 +14,10 @@ void echohash(void *output, const void *input)
 	uint8_t hash[64];
 	sph_echo512_context ctx;
 
-	
+	printf("input size : %d\n", strlen(input));
 	sph_echo512_init(&ctx);
-	sph_echo512(&ctx, input, 80);
+	sph_echo512(&ctx, input, strlen(input));
 	sph_echo512_close(&ctx, (void*)hash);
 
-	
 	memcpy(output, hash, 8);
 }
